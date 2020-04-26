@@ -11,8 +11,10 @@ This project consists of a Nodejs App and a Mongo Database.
 
 ```CSS
 - Packer.json
+- Chef
 - AMI
 - Berksfile
+- Git
 - AWS Credentials
 - pem key
 - Nodejs
