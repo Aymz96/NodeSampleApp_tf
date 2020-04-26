@@ -1,4 +1,4 @@
-# Nodejs & Mongodb Development Environment :computer: :cd:
+# Node Sample App :computer: :cd:
 
 This project consists of a Nodejs App and a Mongo Database.
 
@@ -12,22 +12,20 @@ This project consists of a Nodejs App and a Mongo Database.
 ```CSS
 - Packer.json
 - AMI
-- Terraform
+- Berksfile
+- AWS Credentials
 - pem key
-- npm
-- git
-- Java
 - Nodejs
 - mongodb/mongod
+- Atom
 ```
 
 ### Installation
-- In order to download this repository, open your terminal and run:
-
+- Download this repository, open your terminal and run:
 ```python
-git clone git@github.com:Aymz96/NodejsMongodb_Dev_Env.git
+git clone git@github.com:Aymz96/NodeSampleApp_tf.git
 ```
-### Testing the files
+### Testing the NodeSampleApp_tf
 - To test the files you must cd into the Nodejs_Dev_Environment:
 run:
 ```python
@@ -37,43 +35,30 @@ run:
 ```python
 rake spec
 ```
-- The tests will now run.
+## Installation procedure
+- Displayed below are the steps needed to take in order to get the files working correctly.
 
-### Access the Vagrant machine.
-run:
+### Berksfile
+- To download the relevant Cookbook files which Packer will be using in the later build process run the following command in the directory:
 ```python
-vagrant up
-```
-run:
-```python
-vagrant ssh app
-```
-### Access the App inside the vm
-- cd into the App:
-```python
-cd home/ubuntu/app
-```
-### Install npm
-```python
-npm install
+berks vendor cookbooks
 ```
 
-### Running the App
-run:
+### Packer
+- Validate the packer file using the command below:
 ```python
-npm start
+packer validate packer.json
 ```
-### Displaying the App
-- Once the app has started, open a new web browser and enter the following:
+- The terminal output will dispay `Validate successful`
 
-- `development.local` To view the app.
-
-- `development.local:/posts` To view the posts.
-
-- `development.local:/fibonacci5` To view the fibonacci.
-
-### Success
-- Tests have passed successfully.
+- Now build your AMI using the following command:
+```python
+packer build packer.json
+```
+- The will successfully create your new AMI and display it's ID, you can now move on to the next repository to create a Terraform.
+```python
+https://github.com/Aymz96/First_Terraform
+```
 
 #### Author
 **Ayman Yousfi** - *Junior DevOps Engineer* - [Aymz96](https://github.com/Aymz96)
