@@ -57,7 +57,7 @@ packer validate packer.json
 ```python
 packer build packer.json
 ```
-- The will successfully create your new AMI and display it's ID, you can now move on to the next repository to create a Terraform.
+- This will successfully create your new AMI and display it's ID, you can now move on to the next repository to create a Terraform.
 ```python
 https://github.com/Aymz96/First_Terraform
 ```
